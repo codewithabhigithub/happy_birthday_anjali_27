@@ -160,7 +160,7 @@ function triggerHappyBirthday() {
 // ===== COUNTDOWN =====
 function updateCountdown() {
     const now = new Date();
-    const target = new Date(now.getFullYear(), 4, 27, 0, 0, 0);
+    const target = new Date(now.getFullYear(), 4, 11, 0, 0, 0);
     if (now > target && (now - target) > 86400000) target.setFullYear(target.getFullYear() + 1);
 
     const diff = target - now;
