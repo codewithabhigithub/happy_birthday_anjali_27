@@ -17,7 +17,9 @@
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
@@ -25,7 +27,10 @@ body {
     background: linear-gradient(160deg, #ffe0ef 0%, #ffd6e7 30%, #f8c8dc 60%, #fce4ec 100%);
     min-height: 100vh;
     overflow-x: hidden;
+    max-width: 100vw;
     color: var(--text);
+    margin: 0;
+    padding: 0;
 }
 
 /* ====== FLOATING PETALS ====== */
@@ -89,6 +94,9 @@ section {
     padding: 20px 20px 60px;
     position: relative;
     z-index: auto;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #hero::before {
@@ -140,11 +148,14 @@ section {
 /* Steps */
 .steps {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
     gap: 20px;
     margin-bottom: 36px;
     position: relative;
     max-width: 800px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -582,6 +593,7 @@ section {
     border-radius: 6px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
     width: 100%;
+    min-width: 0; /* Prevents grid blowout */
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     position: relative;
@@ -1118,10 +1130,16 @@ input[type=range]::-webkit-slider-thumb {
         gap: 12px;
         padding: 10px;
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     .photo-card {
         padding: 8px 8px 32px;
         border-radius: 4px;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
     /* Let cards keep their premium rotations, adjusted for tighter space */
     .photo-caption { font-size: 14px; margin-top: 6px; }
