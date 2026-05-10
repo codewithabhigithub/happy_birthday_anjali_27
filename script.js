@@ -59,7 +59,7 @@ function handleClick() {
         hiddenContent.style.display = 'block';
 
         const now = new Date();
-        const target = new Date(now.getFullYear(), 4, 27, 0, 0, 0);
+        const target = new Date(now.getFullYear(), 4, 11, 0, 0, 0);
         const diff = target - now;
         if (diff <= 0 && diff > -86400000) {
             hbdTriggered = true;
