@@ -25,6 +25,18 @@ const messages = [
     { icon: '🎁', title: 'Your Special Surprise!', text: 'This entire page was made just for YOU! Happy Birthday Anjali! May 27 is going to be the most magical day. You deserve all the love in the world! 🎊✨💖' }
 ];
 function handleClick() {
+    if (clicks === 0) {
+        ['bgMusic', 'hbdMusic'].forEach(id => {
+            const audio = document.getElementById(id);
+            if (audio) {
+                audio.play().then(() => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                }).catch(e => console.log('Audio unlock skipped', e));
+            }
+        });
+    }
+    
     if (clicks >= 3) return;
     spawnConfetti();
     clicks++;
