@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Surprise for Anjali 🎀</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" class="css">
+</head>
+
+<body>
+
+  <!-- Bokeh blobs -->
+  <div class="bokeh"
+    style="width:200px;height:200px;background:rgba(255,107,157,0.15);top:10%;left:5%;animation-duration:6s"></div>
+  <div class="bokeh"
+    style="width:140px;height:140px;background:rgba(255,182,193,0.2);top:40%;right:8%;animation-duration:8s"></div>
+  <div class="bokeh"
+    style="width:100px;height:100px;background:rgba(201,24,74,0.1);bottom:20%;left:15%;animation-duration:7s"></div>
+  <div class="bokeh"
+    style="width:160px;height:160px;background:rgba(155,89,182,0.12);top:60%;right:20%;animation-duration:9s"></div>
+
+  <!-- Fairy lights removed from here -->
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <!-- Polaroids -->
+    <div class="polaroid-left">
+      <div class="polaroid-inner">
+        <img src="2.jpeg" alt="">
+      </div>
+    </div>
+    <div class="polaroid-right">
+      <div class="polaroid-inner">
+        <img src="4.jpeg" alt="">
+      </div>
+    </div>
+    <div class="polaroid-right polaroid-right2">
+      <div class="polaroid-inner">
+        <img src="5.jpeg" alt="">
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px">
+      <div style="font-size:28px;animation:pulse 2s infinite">🩷</div>
+      <h1 class="hero-title"><span>A Special Surprise</span> Awaits...</h1>
+      <p class="hero-sub">Click <b>3</b> Times to Open</p>
+    </div>
+
+    <div class="steps">
+      <div class="step active" id="step1">
+        <div class="step-circle s1">1</div>
+        <div class="step-label">First Click</div>
+        <div class="step-desc">Something Cute for You 🥰</div>
+      </div>
+      <div class="step" id="step2">
+        <div class="step-circle s2">2</div>
+        <div class="step-label">Second Click</div>
+        <div class="step-desc">Some Beautiful Memories 🎞️</div>
+      </div>
+      <div class="step" id="step3">
+        <div class="step-circle s3">3</div>
+        <div class="step-label">Third Click</div>
+        <div class="step-desc">A Special Surprise for You 🎁</div>
+      </div>
+    </div>
+
+    <button class="start-btn" id="startBtn" onclick="handleClick()">Click to Start 👋</button>
+    <div class="click-count" id="clickMsg">❤️ Click the button to begin...</div>
+  </section>
+
+  <div id="hiddenContent" style="display: none;">
+    <!-- ===== LETTER ===== -->
+    <section id="letter" class="reveal">
+      <div class="letter-card">
+        <p class="letter-name">Dearest Anjali, 🩷</p>
+        <p class="letter-body">
+          Happy Birthday! On your special day, I wanted to remind you how much your presence brightens the world. You
+          carry a grace that is rare and a heart that is kind. May this year bring you as much joy as you give to
+          everyone around you.
+        </p>
+        <div class="divider">~ ❤️ ~</div>
+        <div class="shayari">
+          तुम मिले तो लगा ज़िन्दगी मिल गयी,<br>
+          हर ख़ुशी जैसे मेरी तकदीर मिल गयी...
+        </div>
+        <div class="divider">~ ❤️ ~</div>
+        <div class="shayari">
+          ना सोचा था इतना खूबसूरत होगा सफ़र,<br>
+          पर तुम साथ हो तो हर राह आसान मिल गयी...
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COUNTDOWN ===== -->
+    <section id="countdown" class="reveal">
+      <h2 class="countdown-title">Countdown to <span>27 May</span> 🎉</h2>
+      <div class="wave-divider">〜〜〜</div>
+      <div class="countdown-grid">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seconds</span></div>
+      </div>
+      <p class="cd-sub">The most special day is coming soon... 🩷</p>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="reveal">
+      <h2 class="gallery-title">
+        <span class="ornament">✦ 〜</span> Beautiful Moments <span class="ornament">〜 ✦</span>
+      </h2>
+      <div class="filter-tabs">
+        <button class="tab active" onclick="filterTab(this,'all')">All</button>
+        <button class="tab" onclick="filterTab(this,'memories')">Memories</button>
+        <button class="tab" onclick="filterTab(this,'smiles')">Smiles</button>
+        <button class="tab" onclick="filterTab(this,'candid')">Candid</button>
+        <button class="tab" onclick="filterTab(this,'favorites')">Favorites</button>
+      </div>
+      <div class="photos-row" id="photosRow">
+        <div class="photo-card" data-cat="memories">
+          <div class="photo-inner square"><img src="2.jpeg" alt=""></div>
+          <p class="photo-caption">Sweet Memories</p>
+        </div>
+        <div class="photo-card" data-cat="candid">
+          <div class="photo-inner square"><img src="4.jpeg" alt=""></div>
+          <p class="photo-caption">Candid Joy</p>
+        </div>
+        <div class="photo-card" data-cat="smiles">
+          <div class="photo-inner"><img src="5.jpeg" alt=""></div>
+          <p class="photo-caption">Timeless Smile</p>
+          <p class="photo-heart">🩷</p>
+        </div>
+        <div class="photo-card" data-cat="favorites">
+          <div class="photo-inner square"><img src="6.jpeg" alt=""></div>
+          <p class="photo-caption">Pure Joy</p>
+        </div>
+        <div class="photo-card" data-cat="candid">
+          <div class="photo-inner square"><img src="7.jpeg" alt=""></div>
+          <p class="photo-caption">Glowing</p>
+        </div>
+      </div>
+      <button class="more-btn">More Memories 🎞️</button>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="reveal">
+      <p class="footer-quote">♥ A friend is one of the nicest things you can be and one of the best things you can have.
+        ♥</p>
+      <p class="footer-made" style="margin-top:8px">♥ Made with love for Anjali ♥</p>
+    </footer>
+  </div> <!-- End hiddenContent -->
+
+  <!-- ===== AUDIO ELEMENTS ===== -->
+  <audio id="bgMusic" src="Kabhi Na Kabhi_Piano.mp3" loop preload="auto"></audio>
+  <audio id="hbdMusic" src="HAPPY BIRTHDAY TO YOU _ PIANO INSTRUMENTAL _ BEST HAPPY BITHDAY MUSIC 2021.mp3" loop
+    preload="auto"></audio>
+
+  <!-- ===== MUSIC PLAYER ===== -->
+  <div class="music-player">
+    <span style="font-size:20px">🎵</span>
+    <div class="music-info">
+      <div class="music-name">Kabhi Na Kabhi (Piano)</div>
+      <div class="music-type">Love Song</div>
+    </div>
+    <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+    <div class="vol-wrap">
+      <span>🔊</span>
+      <input type="range" min="0" max="100" value="60" oninput="setVol(this.value)">
+    </div>
+  </div>
+
+  <!-- ===== SCROLL TOP ===== -->
+  <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <div class="heart-float">🩷</div>
+
+  <!-- ===== SURPRISE MODAL ===== -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal-box">
+      <div class="modal-icon" id="modalIcon">🎁</div>
+      <h3 class="modal-title" id="modalTitle">A Special Surprise!</h3>
+      <p class="modal-text" id="modalText">Wishing you the most magical birthday filled with love, laughter, and
+        everything your heart desires! 💖</p>
+      <button class="modal-close" onclick="closeModal()">Thank You! 🥰</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
